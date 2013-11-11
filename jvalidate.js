@@ -1,7 +1,7 @@
 /*
 Author: jama
 Date: 11/8/2013
-Verison: .3b
+Verison: .4b
 Description:    I'd pretty much advise no one to actually use this plugin, I made it simply to get
                 some exposure to making plugins in jquery.  If you really want to, feel free to go ahead.
 */
@@ -15,11 +15,11 @@ Description:    I'd pretty much advise no one to actually use this plugin, I mad
                 required        : true,                             // If true, field is required to have input                                   
                 email           : false,                            // if true, will validate if email address
                 rule            : false,                            // if not false, will override all other rules and be used for validation
-                minlength       : -1,                               // if >0, a min length validaiton will be applied
-                maxlength       : -1,                               // if >0, a max length validation will be applied
+                minLength       : -1,                               // if >0, a min length validaiton will be applied
+                maxLength       : -1,                               // if >0, a max length validation will be applied
                 precondition    : function () { return true;},      // Function, if certain prerequisites must be met before a field is considered for validation
                 errors          : null,                             // Element to show if any class has errors
-                messageElement  : null                              // Message element to look for, will look first in direct parent.find(element), if not found, will look for $(element), if not find, will log error message
+                messageElement  : '#showmessage' //testing null                              // Message element to look for, will look first in direct parent.find(element), if not found, will look for $(element), if not find, will log error message
             },
             errors :  {                                     // Defaults for when errors occur
                 scrollToError   : false,                            // If true, will scroll to the first error that occurs on the page 
@@ -28,9 +28,11 @@ Description:    I'd pretty much advise no one to actually use this plugin, I mad
                 messages: {                                         // Default messages when validaiton issues occur
                     required    : "This input is required",                     // Default message when required error is present
                     email       : "Not a valid email address",                  // Default message when email error is present... you get the gist
-                    rule        : "The follow characters are invalid {0}",
+                    rule        : "Invalid characters in input",                // If you're using a rule, seriously consider adding a better message
                     minLength   : "Input must be at least {0}",            
-                    maxLength   : "Input must be less than {0}"
+                    maxLength   : "Input must be less than {0}",
+                    replaceChar : "{0}"
+
                 }
             },
             groups: null                                    // No groups by default, these are expensive to use! Use with caution
@@ -38,14 +40,15 @@ Description:    I'd pretty much advise no one to actually use this plugin, I mad
         // Apply defauls to options.errors, options.groups
         options.errors = $.extend({}, settings.errors, options.errors);
         options.groups = $.extend({}, settings.groups, options.groups);
+        var rep = options.errors.messages.replaceChar;
         var validationclasses = [];
         function validate(key, thar) {
             //console.log(thar);
             var value = thar.val();
             var errorsMessages = [];
             params = $.extend({}, settings.validate, options.validate[key]);
-            //console.log(params);
-            //console.log("value: " + value);
+            console.log(params);
+            console.log("value: " + value);
             // Only check rules if precondition is met
             if (params.precondition()) {
                 if ((params.required && !value)) {
@@ -54,14 +57,14 @@ Description:    I'd pretty much advise no one to actually use this plugin, I mad
                 if (params.email && !emailRegex.test(value)) {
                     errorsMessages.push(options.errors.messages.email);
                 }
-                if (value.length < params.minlength) {
-                    errorsMessages.push(options.errors.messages.minlength.format(params.minlength));
+                if (value.toString().length < params.minLength) {
+                    errorsMessages.push(options.errors.messages.minLength.replace(rep, params.minLength));
                 }
-                if (params.maxlength > 0 && value.length > params.maxlength) {
-                    errorsMessages.push(options.errors.messages.maxlength.format(params.maxlength));
+                if (params.maxLength > 0 && value.toString().length > params.maxLength) {
+                    errorsMessages.push(options.errors.messages.maxLength.replace(rep, params.maxlength));
                 }
-                if (!!params.rules && !params.rule.test(value)) {
-                    errorsMessages.push(options.errors.messages.rule.format(value));
+                if (!!params.rule && !params.rule.test(value)) {
+                    errorsMessages.push(options.errors.messages.rule);
                 }
             }
             //console.log(errorsMessages);
@@ -76,11 +79,11 @@ Description:    I'd pretty much advise no one to actually use this plugin, I mad
                 }
                 if (params.messageElement !== null) {
                     if (thar.parent().find(params.messageElement).length > 0) {
-                        thar.parent().find(params.messageElement).html(errorsMessages.join(" "));
+                        thar.parent().find(params.messageElement).html(errorsMessages.join(", "));
                     }
                     else {
                         if ($(params.messageElement).length > 0) {
-                            $(params.messageElement).html(errorsMessages.join(" "));
+                            $(params.messageElement).html(errorsMessages.join(", "));
                         }
                         else {
                             console.log("We can't find the element: " + params.messageElement + " check configuration file");
@@ -124,7 +127,7 @@ Description:    I'd pretty much advise no one to actually use this plugin, I mad
                         }).join(", ");
                     $(that).on('blur', groupclasses, function () {
                         // We don't have the precondition for ensuring validation
-                        if ('precondition' in options.groups[key] && !options.groups[key].precondition()) {
+                        if ('preconditionCheck' in options.groups[key] && !options.groups[key].preconditionCheck()) {
                             console.log('in precond');
                             $(selector + " ." + options.errors.name).removeClass(options.errors.name);
                             $(options.groups[key].errors).hide();
