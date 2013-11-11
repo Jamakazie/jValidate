@@ -20,7 +20,7 @@ var validation = {
 		},
 		number: {
 			required: true,
-			rule: /\d*/,		// Rule for input to be checked again, if it does not match, will report validaiton issues
+			rule: /\d*/,		// Regex, if rule.test(input.val()) does not match, error raised 
 			errors: '#number_error'
 		},
 	errors: {				// Settings for when errors occur
@@ -44,6 +44,5 @@ TODO
 ===
 
 * Add more default settings
-* Have .errors class be a setting that is changeable 
-* Make README a bit more descriptive (include default settings explaination...etc)
-* Make it better all around
+* Need to update doMessages when message is not found in parent element
+* Add listeners to group preconditions
