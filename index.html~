@@ -7,6 +7,7 @@
     <meta name="description" content="jValidate : A jQuery validation plugin" />
 
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="css/core.css" />
     <link rel="stylehseet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" />
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>    
     <script type="text/javascript" src="scripts/jvalidate.js"></script>
@@ -77,11 +78,14 @@
 <a name="examples-in-action" class="anchor" href="#examples-in-action"><span class="octicon octicon-link"></span></a>Examples in action</h2>
      <div id="jval-example">
 	     <h3>Sample form</h3>
-	    <form id="validate">
-		    <span class="container">
-			    <input type="text" class="email"/>
-			    <span class="message"></span>
-		    </span>
+	     <form id="validate" class="form-horizontal" role="form">
+		     <div class="form-group">
+			     <label for "email" class="control-label">Email</label>
+			     <div class="container">
+				    <input type="text" name="email" class="email"/>
+				    <span class="message"></span>
+			    </div>
+		    </div>
 	    </form>
 	    <script type="text/javascript">
 		    var params = {
