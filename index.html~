@@ -1,1 +1,110 @@
-Test GH page
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="jValidate : A jQuery validation plugin" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+    <script type="text/javascript" src="scripts/jvalidate.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>    
+
+    <title>jValidate</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/Jamakazie/jValidate">View on GitHub</a>
+
+          <h1 id="project_title">jValidate</h1>
+          <h2 id="project_tagline">A jQuery validation plugin</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/Jamakazie/jValidate/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/Jamakazie/jValidate/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h3>
+<a name="jvalidate" class="anchor" href="#jvalidate"><span class="octicon octicon-link"></span></a>jValidate</h3>
+
+<p>jValidate is a "lightweight" jQuery plugin for form validation. This plugin is most likely incredibly inefficient and if used in heavy production servers...will uhh, well it won't be good.  It also doesn't generally follow most jQuery plugin standards so there's that too.</p>
+
+<h2>
+<a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h2>
+
+<p>jValidate is used in the following manner, given the html...</p>
+
+<div class="highlight highlight-html"><pre><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">"validate"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"container"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">class=</span><span class="s">"email"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"message"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
+</pre></div>
+
+<p>The javascript...</p>
+
+<div class="highlight highlight-javascript"><pre><span class="kd">var</span> <span class="nx">params</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">validate</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">email</span><span class="o">:</span> <span class="p">{</span>
+            <span class="nx">required</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nx">email</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nx">messageElement</span><span class="o">:</span> <span class="s1">'.message'</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+
+<span class="kd">var</span> <span class="nx">jval</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">'#validate'</span><span class="p">).</span><span class="nx">jValidate</span><span class="p">(</span><span class="nx">params</span><span class="p">);</span> <span class="c1">// This wires up on blur events for all effected inputs</span>
+
+<span class="k">if</span><span class="p">(</span><span class="nx">jval</span><span class="p">.</span><span class="nx">isValid</span><span class="p">()){</span>
+    <span class="c1">// validates form</span>
+<span class="p">}</span>
+
+</pre></div>
+
+<h2>
+<a name="examples-in-action" class="anchor" href="#examples-in-action"><span class="octicon octicon-link"></span></a>Examples in action</h2>
+      </section>
+     <div id="jval-example">
+	     <h3>Sample form</h3>
+	    <form id="validate">
+		    <span class="container">
+			    <input type="text" class="email"/>
+			    <span class="message"></span>
+		    </span>
+	    </form>
+	    <script type="text/javascript">
+		    var params = {
+			validate: {
+				email: {
+					required: true,
+					email: true,
+					messageElement: '.message'
+				       }
+				  }
+		    };
+		var jval = $('#validate').jValidate(params);
+	    </script>
+ 	</div>
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">jValidate maintained by <a href="https://github.com/Jamakazie">Jamakazie</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
