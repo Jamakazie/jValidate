@@ -36,8 +36,42 @@
 
 <p>jValidate is a "lightweight" jQuery plugin for form validation. This plugin is most likely incredibly inefficient and if used in heavy production servers...will uhh, well it won't be good.  It also doesn't generally follow most jQuery plugin standards so there's that too.</p>
 
-<div class="highlight highlight-javascript"><pre><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">'click'</span><span class="p">,</span> <span class="s1">'someelement'</span> <span class="kd">function</span><span class="p">(){</span><span class="nx">alert</span><span class="p">(</span><span class="s1">'pewpewpew'</span><span class="p">);});</span>
+<h2>
+<a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h2>
+
+<p>jValidate is used in the following manner, given the html...</p>
+
+<div class="highlight highlight-html"><pre><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">"validate"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"container"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">class=</span><span class="s">"email"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"message"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
 </pre></div>
+
+<p>The javascript...</p>
+
+<div class="highlight highlight-javascript"><pre><span class="kd">var</span> <span class="nx">params</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">validate</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">email</span><span class="o">:</span> <span class="p">{</span>
+            <span class="nx">required</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nx">emai</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nx">messageElement</span><span class="o">:</span> <span class="s1">'.message'</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+
+<span class="kd">var</span> <span class="nx">jval</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">'#validate'</span><span class="p">).</span><span class="nx">jValidate</span><span class="p">(</span><span class="nx">params</span><span class="p">);</span> <span class="c1">// This wires up on blur events for all effected inputs</span>
+
+<span class="k">if</span><span class="p">(</span><span class="nx">jval</span><span class="p">.</span><span class="nx">isValid</span><span class="p">()){</span>
+    <span class="c1">// validates form</span>
+<span class="p">}</span>
+
+</pre></div>
+
+<h2>
+<a name="examples-in-action" class="anchor" href="#examples-in-action"><span class="octicon octicon-link"></span></a>Examples in action</h2>
       </section>
     </div>
 
