@@ -6,6 +6,11 @@ jValidate is a lightweight validation plugin for jQuery... or so I'd like it to 
 Required:
 	- jQuery
 
+Demo
+===
+
+http://jamakazie.github.io/jValidate/
+
 Usage
 ===
 
