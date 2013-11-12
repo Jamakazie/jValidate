@@ -55,7 +55,7 @@
     <span class="nx">validate</span><span class="o">:</span> <span class="p">{</span>
         <span class="nx">email</span><span class="o">:</span> <span class="p">{</span>
             <span class="nx">required</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-            <span class="nx">emai</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nx">email</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
             <span class="nx">messageElement</span><span class="o">:</span> <span class="s1">'.message'</span>
         <span class="p">}</span>
     <span class="p">}</span>
@@ -74,6 +74,25 @@
 <a name="examples-in-action" class="anchor" href="#examples-in-action"><span class="octicon octicon-link"></span></a>Examples in action</h2>
       </section>
     </div>
+    <div id="jval-example">
+	    <form id="validate">
+		    <span class="container">
+			    <input type="text" class="email"/>
+			    <span class="message"></span>
+		    </span>
+	    </form>
+	    <script type="text/javascript">
+		    var params = {
+			validate: {
+				email: {
+					required: true,
+					email: true,
+					messageElement: '.message'
+				       }
+				  }
+		    };
+		var jval = $('#validate').jValidate(params);
+	    </script>
 
     <!-- FOOTER  -->
     <div id="footer_wrap" class="outer">
