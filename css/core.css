@@ -6,3 +6,11 @@
 	color: red;
 	font-weight: bold;
 }
+
+
+
+/* Styling for Ex 2 */
+#group-1, #group-2{
+	color: red;
+	display: none;
+}
