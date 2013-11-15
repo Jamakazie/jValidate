@@ -23,11 +23,11 @@ var ex2 = {
 	},
 	groups : {
 		'group-1': {
-			container : 'ex-2-group-1',
+			container : '#ex-2-group-1',
 			errors: '#group-1',
 		},
 		'group-2': {
-			container: 'ex-2-group-2',
+			container: '#ex-2-group-2',
 			errors: '#group-2',
 		}
 	}

@@ -12,7 +12,7 @@ Description:    I'd pretty much advise no one to actually use this plugin, I mad
         var emailRegex = /^.+@.+\..+/;      // super simple regex to just check if anything@anything.anything
         var settings = {                                // Default settings
             validate : {                                       // Defaults for validation
-                required        : true,                             // If true, field is required to have input                                   
+                required        : false,                             // If true, field is required to have input                                   
                 email           : false,                            // if true, will validate if email address
                 rule            : false,                            // if not false, will use as regex to validate against, consider adding extra information to rules
                 ruleMessage     : "Invalid characters in input",    // Rule messages are often very specific to the validation being applied, and may need a more specific message than found in errors.messages
@@ -113,7 +113,7 @@ Description:    I'd pretty much advise no one to actually use this plugin, I mad
                     errorsMessages.push(options.errors.messages.minLength.replace(rep, params.minLength));
                 }
                 if (params.maxLength > 0 && value.toString().length > params.maxLength) {
-                    errorsMessages.push(options.errors.messages.maxLength.replace(rep, params.maxLength));
+                    errorsMessages.push(options.errors.messages.maxLength.replace(rep, params.maxLength+1));
                 }
                 if (!!params.rule && !params.rule.test(value)) {
                     errorsMessages.push(params.ruleMessage);
