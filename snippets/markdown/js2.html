@@ -1,0 +1,37 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">var</span> ex2 <span style="color: #333333">=</span> {
+	validate <span style="color: #333333">:</span> {
+		<span style="background-color: #fff0f0">&#39;ex-2-name&#39;</span> <span style="color: #333333">:</span> {
+			required<span style="color: #333333">:</span> <span style="color: #008800; font-weight: bold">true</span>,
+			messageElement<span style="color: #333333">:</span> <span style="background-color: #fff0f0">&#39;.message&#39;</span>,
+			minLength<span style="color: #333333">:</span> <span style="color: #0000DD; font-weight: bold">5</span>,
+		},
+		<span style="background-color: #fff0f0">&#39;ex-2-score&#39;</span> <span style="color: #333333">:</span> {
+			rule<span style="color: #333333">:</span> <span style="color: #000000; background-color: #fff0ff">/^\d+$/</span>,
+			messageElement<span style="color: #333333">:</span> <span style="background-color: #fff0f0">&#39;.message&#39;</span>,
+			ruleMessage <span style="color: #333333">:</span> <span style="background-color: #fff0f0">&#39;Input must be a positive integer&#39;</span>
+		},
+		<span style="background-color: #fff0f0">&#39;ex-2-hp&#39;</span> <span style="color: #333333">:</span> {
+			rule<span style="color: #333333">:</span> <span style="color: #000000; background-color: #fff0ff">/^\d+$/</span>,
+			messageElement<span style="color: #333333">:</span> <span style="background-color: #fff0f0">&#39;.message&#39;</span>,
+			ruleMessage<span style="color: #333333">:</span> <span style="background-color: #fff0f0">&#39;Input must be a positive integer&#39;</span>
+		},
+		<span style="background-color: #fff0f0">&#39;ex-2-mp&#39;</span> <span style="color: #333333">:</span> {
+			rule<span style="color: #333333">:</span> <span style="color: #000000; background-color: #fff0ff">/^\d+$/</span>,
+			messageElement<span style="color: #333333">:</span> <span style="background-color: #fff0f0">&#39;.message&#39;</span>,
+			ruleMessage<span style="color: #333333">:</span> <span style="background-color: #fff0f0">&#39;Input must be a positive integer&#39;</span>
+		},
+	},
+	groups <span style="color: #333333">:</span> {
+		<span style="background-color: #fff0f0">&#39;group-1&#39;</span><span style="color: #333333">:</span> {
+			container <span style="color: #333333">:</span> <span style="background-color: #fff0f0">&#39;#ex-2-group-1&#39;</span>,
+			errors<span style="color: #333333">:</span> <span style="background-color: #fff0f0">&#39;#group-1&#39;</span>,
+		},
+		<span style="background-color: #fff0f0">&#39;group-2&#39;</span><span style="color: #333333">:</span> {
+			container<span style="color: #333333">:</span> <span style="background-color: #fff0f0">&#39;#ex-2-group-2&#39;</span>,
+			errors<span style="color: #333333">:</span> <span style="background-color: #fff0f0">&#39;#group-2&#39;</span>,
+		}
+	}
+};
+
+<span style="color: #008800; font-weight: bold">var</span> jval2 <span style="color: #333333">=</span> $(<span style="background-color: #fff0f0">&#39;#form-2&#39;</span>).jValidate(ex2);
+</pre></div>

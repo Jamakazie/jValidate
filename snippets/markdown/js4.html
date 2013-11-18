@@ -1,0 +1,12 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">var</span> ex4 <span style="color: #333333">=</span> {
+	validate<span style="color: #333333">:</span> {
+		<span style="background-color: #fff0f0">&#39;ex-4-precon&#39;</span><span style="color: #333333">:</span> {
+			required<span style="color: #333333">:</span> <span style="color: #008800; font-weight: bold">true</span>,
+			messageElement<span style="color: #333333">:</span> <span style="background-color: #fff0f0">&#39;.message&#39;</span>,
+			precondition<span style="color: #333333">:</span> <span style="color: #008800; font-weight: bold">function</span>(){ <span style="color: #008800; font-weight: bold">return</span> <span style="color: #333333">!</span>$(<span style="background-color: #fff0f0">&#39;#precon-example&#39;</span>).is(<span style="background-color: #fff0f0">&#39;:checked&#39;</span>);}
+		}
+	}
+};
+
+<span style="color: #008800; font-weight: bold">var</span> jVal4 <span style="color: #333333">=</span> $(<span style="background-color: #fff0f0">&#39;#form-4&#39;</span>).jValidate(ex4);
+</pre></div>

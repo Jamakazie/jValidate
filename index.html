@@ -41,47 +41,47 @@
 			<h2>Examples</h2>
 			<div id="example-1" class="example-container">
 				<h3>Example 1 - Basic Usage</h3>
-				<div class="example"></div>
-				<div class="html"></div>
-				<div class="js"></div>
 				<div class="switch">
 					<button type="button" class="btn btn-primary switch-example">Example</button>
 					<button type="button" class="btn btn-info switch-html">HTML</button>
 					<button type="button" class="btn btn-info switch-js">JavaScript</button>
 				</div>
+				<div class="example"></div>
+				<div class="html"></div>
+				<div class="js"></div>
 			</div>
 			<div id="example-2" class="example-container">
 				<h3>Example 2 - Using Groups</h3>
-				<div class="example"></div>
-				<div class="html"></div>
-				<div class="js"></div>
 				<div class="switch">
 					<button type="button" class="btn btn-primary switch-example">Example</button>
 					<button type="button" class="btn btn-info switch-html">HTML</button>
 					<button type="button" class="btn btn-info switch-js">JavaScript</button>
 				</div>
+				<div class="example"></div>
+				<div class="html"></div>
+				<div class="js"></div>
 			</div>
 			<div id="example-3" class="example-container">
 				<h3>Example 3 - Using a Rule</h3>
-				<div class="example"></div>
-				<div class="html"></div>
-				<div class="js"></div>
 				<div class="switch">
 					<button type="button" class="btn btn-primary switch-example">Example</button>
 					<button type="button" class="btn btn-info switch-html">HTML</button>
 					<button type="button" class="btn btn-info switch-js">JavaScript</button>
 				</div>
+				<div class="example"></div>
+				<div class="html"></div>
+				<div class="js"></div>
 			</div>
 			<div id="example-4" class="example-container">
 				<h3>Example 4 - Using A Precondition</h3>
-				<div class="example"></div>
-				<div class="html"></div>
-				<div class="js"></div>
 				<div class="switch">
 					<button type="button" class="btn btn-primary switch-example">Example</button>
 					<button type="button" class="btn btn-info switch-html">HTML</button>
 					<button type="button" class="btn btn-info switch-js">JavaScript</button>
 				</div>
+				<div class="example"></div>
+				<div class="html"></div>
+				<div class="js"></div>
 			</div>
 			</section>
 			<!-- FOOTER  -->
@@ -100,12 +100,8 @@
 					var count = i + 1;
 					$('#example-' + count + ' > .example').load("snippets/html/" + count + ".html");
 					// Super-hacky, we load contents of snippets into divs to later use in markdown-mode
-					$('#example-' + count + ' > .html').load("snippets/html/" + count + ".html");
-					$('#example-' + count + ' > .js').load("snippets/js/" + count + ".js");
-					var htmlmarkdown = "```html" + $("#example-" + count + " > .html").html() + "```";
-					var jsmarkdown = "```javascript" + $("#example-" +count + " > .js").html() + "```";
-					$("#example-" + count + " > .html").html(markdown.toHTML(htmlmarkdown));
-					$("#example-" + count + " > .js").html(markdown.toHTML(jsmarkdown));
+					$('#example-' + count + ' > .html').load("snippets/markdown/html" + count + ".html");
+					$('#example-' + count + ' > .js').load("snippets/markdown/js" + count + ".html");
 
 				});
 				

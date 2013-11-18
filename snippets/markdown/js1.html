@@ -1,0 +1,26 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">var</span> ex1 <span style="color: #333333">=</span> {
+	validate <span style="color: #333333">:</span> {
+		required<span style="color: #333333">:</span> {
+			required<span style="color: #333333">:</span> <span style="color: #008800; font-weight: bold">true</span>,
+			messageElement<span style="color: #333333">:</span> <span style="background-color: #fff0f0">&#39;.message&#39;</span>,
+		},
+		email<span style="color: #333333">:</span> {
+			required<span style="color: #333333">:</span> <span style="color: #008800; font-weight: bold">true</span>,
+			email<span style="color: #333333">:</span> <span style="color: #008800; font-weight: bold">true</span>,
+			messageElement<span style="color: #333333">:</span> <span style="background-color: #fff0f0">&#39;.message&#39;</span>,
+		},
+		minlength<span style="color: #333333">:</span> {
+			required<span style="color: #333333">:</span> <span style="color: #008800; font-weight: bold">true</span>,
+			minLength<span style="color: #333333">:</span> <span style="color: #0000DD; font-weight: bold">5</span>,
+			messageElement<span style="color: #333333">:</span> <span style="background-color: #fff0f0">&#39;.message&#39;</span>,
+		},
+		maxlength<span style="color: #333333">:</span> {
+			required<span style="color: #333333">:</span> <span style="color: #008800; font-weight: bold">true</span>,
+			maxLength<span style="color: #333333">:</span> <span style="color: #0000DD; font-weight: bold">5</span>,
+			messageElement<span style="color: #333333">:</span> <span style="background-color: #fff0f0">&#39;.message&#39;</span>,
+		},
+	}
+};
+
+<span style="color: #008800; font-weight: bold">var</span> jval <span style="color: #333333">=</span> $(<span style="background-color: #fff0f0">&#39;#validate&#39;</span>).jValidate(ex1);
+</pre></div>

@@ -8,6 +8,9 @@
 }
 
 
+.js, .html{
+	display: none;
+}
 
 /* Styling for Ex 2 */
 #group-1, #group-2{
