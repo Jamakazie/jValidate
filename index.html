@@ -99,9 +99,9 @@
 					// We were dumb and did 1 indexing
 					var count = i + 1;
 					$('#example-' + count + ' > .example').load("snippets/html/" + count + ".html");
-					// Super-hacky, we load contents of snippets into divs to later use in markdown-mode
 					$('#example-' + count + ' > .html').load("snippets/markdown/html" + count + ".html");
 					$('#example-' + count + ' > .js').load("snippets/markdown/js" + count + ".html");
+					$.getScript("snippests/js/" + count + ".js");
 
 				});
 				
