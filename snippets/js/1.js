@@ -22,4 +22,4 @@ var ex1 = {
 	}
 };
 
-var jval = $('#validate').jValidate(ex1);
+var jval = $('#form-1').jValidate(ex1);
