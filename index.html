@@ -43,6 +43,11 @@
 				<div class="example"></div>
 				<div class="html"></div>
 				<div class="js"></div>
+				<div class="switch">
+					<button type="button" class="btn btn-primary switch-example">Example</button>
+					<button type="button" class="btn btn-info switch-html">HTML</button>
+					<button type="button" class="btn btn-info switch-css">CSS</button>
+				</div>
 			</div>
 			<div id="example-2" class="example-container">
 				<h3>Example 2 - Using Groups</h3>
@@ -75,6 +80,15 @@
 	<script type="text/javascript">
 		$(document).ready(function(){
 				$('#example-1 > .example').load("snippets/html/1.html");
+				$('#example-2 > .example').load("snippets/html/2.html");
+				$('#example-3 > .example').load("snippets/html/3.html");
+				$('#example-4 > .example').load("snippets/html/4.html");
+
+				$.getScript("/snippets/js/1.js");
+				$.getScript("/snippets/js/2.js");
+				$.getScript("/snippets/js/3.js");
+				$.getScript("/snippets/js/4.js");
+
 		});	
 	</script>
 </html>
